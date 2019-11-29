@@ -8,14 +8,11 @@ public class score {
     }
 
     public boolean check(int scores){
-        try {
-            if(scores>=100 && scores<=0){
-                throw new OutofBoundException("out of bound");
-            }
-        } catch (OutofBoundException e) {
-            e.printStackTrace();
+        if(scores>=0 && scores<=100){
+            return true;
         }
-        return true;
+        else
+            return false;
     }
 
     public char Score(int scores){
@@ -38,15 +35,6 @@ public class score {
         if(score1.check(score1.s)==true){
             System.out.println(score1.s);
             System.out.println(score1.Score(score1.s));
-        }
-    }
-
-    class OutofBoundException extends Exception{
-        public OutofBoundException(){
-
-        }
-        public OutofBoundException(String str){
-            super(str);
         }
     }
 }
