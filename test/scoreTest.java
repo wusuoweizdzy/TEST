@@ -6,18 +6,14 @@ import static org.junit.Assert.*;
 public class scoreTest {
 
     @Test
-    public void setS() {
-        score score1 = new score();
-        score1.setS(101);
-        score1.check(score1.s);
-    }
-
-    @Test
     public void check() {
         score score2 = new score();
         score2.setS(90);
         boolean result = score2.check(score2.s);
         Assert.assertEquals("error!",result,true);
+        score2.setS(110);
+        result = score2.check(score2.s);
+        Assert.assertEquals("error!",result,false);
     }
 
     @Test
